@@ -31,3 +31,6 @@ jobs:
       with:
         push: true
         tags: mandriic/java-app:latest
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
