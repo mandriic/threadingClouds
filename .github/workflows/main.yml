@@ -32,7 +32,7 @@ jobs:
       with:
         registry: docker.io
         ecr: false
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        username: mandriic
         password:  ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build and Push Docker Image
