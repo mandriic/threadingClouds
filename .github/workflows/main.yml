@@ -12,9 +12,10 @@ jobs:
 
     steps:
       - name: Debug DockerHub Username Secret
-        run: echo "DOCKERHUB_USERNAME ${{ secrets.DOCKERHUB_USERNAME }}"
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: echo "DOCKERHUB_USERNAME ${{ secrets.DOCKERHUB_USERNAME }}"
+
       - name: Debug DockerHub Token Secret
         run: echo "DOCKERHUB_TOKEN ${{ secrets.DOCKERHUB_TOKEN }}"
         env:
