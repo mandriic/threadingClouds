@@ -31,6 +31,7 @@ jobs:
       uses: docker/login-action@v3
       env:
         registry: docker.io
+        ecr: false
         username: mandriic
         password: dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
         
