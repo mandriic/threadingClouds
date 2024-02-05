@@ -1,9 +1,5 @@
 name: Build and Push Docker Image
 
-on:
-  push:
-    branches:
-      - main
       
 jobs:
 
@@ -12,11 +8,6 @@ jobs:
 
     steps:
       - name: Debug DockerHub Username Secret
-        env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        run: echo "DOCKERHUB_USERNAME ${{ secrets.DOCKERHUB_USERNAME }}"
-
+        run: echo "DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}"
       - name: Debug DockerHub Token Secret
-        run: echo "DOCKERHUB_TOKEN ${{ secrets.DOCKERHUB_TOKEN }}"
-        env:
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: echo "DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}"
