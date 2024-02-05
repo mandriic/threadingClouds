@@ -33,7 +33,8 @@ jobs:
         registry: docker.io
         ecr: false
         username: mandriic
-        password:  ${{ secrets.DOCKERHUB_TOKEN }}
+        password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
+        #password:  ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
