@@ -27,7 +27,7 @@ jobs:
       run: ./gradlew build
 
     - name: Build and Push Docker Image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v4
       with:
         push: true
-        tags: your-dockerhub-username/your-java-app:latest
+        tags: mandriic/java-app:latest
