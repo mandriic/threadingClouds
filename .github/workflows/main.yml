@@ -9,32 +9,13 @@ jobs:
 
   build-and-push:
     runs-on: ubuntu-latest
-    
+
     steps:
-        
-    - name: Checkout repository
-      uses: actions/checkout@v4
-        
-
-    - name: Set up JDK
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'adopt'
-        java-version: '17'
-
-
-    - name: Build with gradlew
-      run: ./gradlew build
-      
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
-    - name: Build and Push Docker Image
-      uses: docker/build-push-action@v4
-      with:
-        push: true
-        tags: mandriic/java-app:latest
-
+      - name: Debug DockerHub Username Secret
+        run: echo "DOCKERHUB_USERNAME ${{ secrets.DOCKERHUB_USERNAME }}"
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      - name: Debug DockerHub Token Secret
+        run: echo "DOCKERHUB_TOKEN ${{ secrets.DOCKERHUB_TOKEN }}"
+        env:
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
