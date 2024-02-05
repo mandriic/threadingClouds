@@ -22,6 +22,11 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v2
       with:
