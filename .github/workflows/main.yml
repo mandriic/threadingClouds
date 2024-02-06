@@ -34,7 +34,7 @@ jobs:
         ecr: false
         username: mandriic
         #password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
-        password:  ${{ DOCKERHUB_TOKEN }}
+        password:  ${{ secret.DOCKERHUB_TOKEN }}
         
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
