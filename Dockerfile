@@ -14,4 +14,4 @@ EXPOSE 8080
 ENV NAME World
 
 # Run application when the container launches
-CMD ["java", "-jar", "java-application.jar"]
+CMD ["java", "-jar", "/app/build/libs/demo-0.0.1-SNAPSHOT.jar"]
