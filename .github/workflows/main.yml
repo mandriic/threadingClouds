@@ -24,7 +24,8 @@ jobs:
 
 
     - name: Build with gradlew
-      run: ./gradlew build
+      run: chmod +x ./gradlew
+        ./gradlew build
     
     
     - name: Login to Docker Hub
