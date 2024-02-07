@@ -60,13 +60,19 @@ jobs:
     - name: Touch YAML file
       run: touch k8s/java-app.yaml
 
-    - name: Commit and push changes to trigger Argo CD sync
+    - name: Touch YAML file
       run: |
         git config --global user.email "kellaxxx@gmail.com"
         git config --global user.name "mandriic"
+        touch k8s/java-app.yaml
         git add k8s/java-app.yaml
-        git commit -m "Touch YAML file to trigger Argo CD sync"
+        git diff-index --quiet HEAD || git commit -m "Touch YAML file to trigger Argo CD sync"
         git push origin main
+
+
+
+          
+
     
   #  - name: Build and Push Docker Image  
   #    uses: docker/build-push-action@v4
