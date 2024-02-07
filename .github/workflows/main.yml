@@ -46,17 +46,57 @@ jobs:
         username: mandriic
         password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
         #password:  ${{ secrets.DOCKERHUB_TOKEN }}
-
+    
+    - name: Set commit information
+      run: |
+        COMMIT_SHA=$(git rev-parse --short=7 HEAD)
+        COMMIT_MSG=$(git log -1 --pretty=%B | tr -d '\n')
+        export TAG="commit-${COMMIT_SHA}-${COMMIT_MSG}"
+        
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: mandriic/java-app:latest
+        tags: mandriic/java-app:${{ github.sha }} , mandriic/java-app:latest
         file: Dockerfile
         build-args: |
           JAR_FILE=build/libs/demo-0.0.1-SNAPSHOT.jar
-  
+
+    - name: Update Image Tag Values
+      run: |
+        chart_dir="k8s"
+        new_image_tag=${{ github.sha }}
+        sed -i "s|mandriic/java-app:.*|mandriic/java-app:\${{ github.sha }}|" k8s/java-app.yaml
+        
+       # sed -i 's/mandriic\/java-app:latest/mandriic\/java-app:${{ github.sha }}/' k8s/java-app.yaml
+
+        # Update the values.yaml file with the new image tag
+#        sed -i "s/^  tag: .*/  tag: $new_image_tag/" "$chart_dir/java-app.yaml"   
+    
+    - name: Commit the changes made
+      run: | 
+        git config --global user.name 'mandriic'
+        git config --global user.email 'kellaxxx@gmail.com'
+        git add k8s/java-app.yaml
+        git commit -am "updating image tag"
+        git push
+
+ #   - name: Update Kubernetes manifest with variable tag
+  #    run: |
+  #      sed -i "s/mandriic\/your-app:latest/your-docker-username\/your-app:$TAG/" path/to/your/deployment.yaml
+
+ #   - name: Commit and push changes to trigger Argo CD sync
+ #     run: |
+  #      git config --global user.email "your-email@example.com"
+ #       git config --global user.name "Your Name"
+ #       git add path/to/your/deployment.yaml
+#        git commit -m "Update Docker image tag to $TAG"
+ #       git push origin main
+
+
+          
+
     
   #  - name: Build and Push Docker Image  
   #    uses: docker/build-push-action@v4
