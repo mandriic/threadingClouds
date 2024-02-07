@@ -75,6 +75,7 @@ jobs:
       run: | 
         git config --global user.name 'mandriic'
         git config --global user.email 'kellaxxx@gmail.com'
+        git add k8s/java-app.yaml
         git commit -am "updating image tag"
         git push
 
