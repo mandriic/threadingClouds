@@ -58,7 +58,7 @@ jobs:
           JAR_FILE=build/libs/demo-0.0.1-SNAPSHOT.jar
           
     - name: Touch YAML file
-      run: touch path/to/your/deployment.yaml
+      run: touch k8s/java-app.yaml
 
     - name: Commit and push changes to trigger Argo CD sync
       run: |
