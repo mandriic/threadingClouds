@@ -58,7 +58,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: mandriic/java-app:$TAG .
+        tags: "mandriic/java-app:$TAG"
         file: Dockerfile
         build-args: |
           JAR_FILE=build/libs/demo-0.0.1-SNAPSHOT.jar
