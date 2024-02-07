@@ -46,29 +46,36 @@ jobs:
         username: mandriic
         password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
         #password:  ${{ secrets.DOCKERHUB_TOKEN }}
-
+    
+    - name: Set commit information
+      run: |
+        COMMIT_SHA=$(git rev-parse --short=7 HEAD)
+        COMMIT_MSG=$(git log -1 --pretty=%B | tr -d '\n')
+        export TAG="commit-${COMMIT_SHA}-${COMMIT_MSG}"
+        
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: mandriic/java-app:latest
+        tags: mandriic/java-app:$TAG .
         file: Dockerfile
         build-args: |
           JAR_FILE=build/libs/demo-0.0.1-SNAPSHOT.jar
-          
-    - name: Touch YAML file
-      run: touch k8s/java-app.yaml
 
-    - name: Touch YAML file
-      run: |
-        git config --global user.email "kellaxxx@gmail.com"
-        git config --global user.name "mandriic"
-        touch k8s/java-app.yaml
-        git add k8s/java-app.yaml
-        git diff-index --quiet HEAD || git commit -m "Touch YAML file to trigger Argo CD sync"
-        git push origin main
 
+
+ #   - name: Update Kubernetes manifest with variable tag
+  #    run: |
+  #      sed -i "s/mandriic\/your-app:latest/your-docker-username\/your-app:$TAG/" path/to/your/deployment.yaml
+
+ #   - name: Commit and push changes to trigger Argo CD sync
+ #     run: |
+  #      git config --global user.email "your-email@example.com"
+ #       git config --global user.name "Your Name"
+ #       git add path/to/your/deployment.yaml
+#        git commit -m "Update Docker image tag to $TAG"
+ #       git push origin main
 
 
           
