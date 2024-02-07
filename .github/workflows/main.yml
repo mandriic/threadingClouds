@@ -67,7 +67,9 @@ jobs:
       run: |
         chart_dir="k8s"
         new_image_tag=${{ github.sha }}
-        sed -i 's/mandriic\/java-app:latest/mandriic\/java-app:${{ github.sha }}/' k8s/java-app.yaml
+        sed -i "s|mandriic/java-app:.*|mandriic/java-app:\${{ github.sha }}|" k8s/java-app.yaml
+        
+       # sed -i 's/mandriic\/java-app:latest/mandriic\/java-app:${{ github.sha }}/' k8s/java-app.yaml
 
         # Update the values.yaml file with the new image tag
 #        sed -i "s/^  tag: .*/  tag: $new_image_tag/" "$chart_dir/java-app.yaml"   
