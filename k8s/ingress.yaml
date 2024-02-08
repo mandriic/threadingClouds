@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: java-app-deployment
+            name: java-app
             port:
               number: 8080
