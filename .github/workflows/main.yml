@@ -44,7 +44,6 @@ jobs:
         registry: docker.io
         ecr: false
         username: "${{ secrets.DOCKER_USERNAME }}"
-        #password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
         password: "${{ secrets.DOCKER_PASSWORD }}"
     
     - name: Set commit information (Optional usage)
