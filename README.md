@@ -1,3 +1,4 @@
+[![Build Java-app and Push Docker Image Status](https://github.com/mandriic/threadingClouds/actions/workflows/main.yml/badge.svg)](https://github.com/mandriic/threadingClouds/actions/workflows/main.yml)
 # Setting up CD/CI for a Java-Spring Application in a Kubernetes Cluster
 
 This guide outlines the steps to implement Continuous Deployment (CD) and Continuous Integration (CI) for a simple Java-Spring application within a Kubernetes cluster. The CD/CI pipeline will be orchestrated using Git Actions, ArgoCD, and Docker images.
