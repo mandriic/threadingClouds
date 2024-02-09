@@ -43,15 +43,12 @@ jobs:
       uses: docker/setup-buildx-action@v3
     - name: Login to Docker Hub
       uses: docker/login-action@v3
-      env:
-        PASS: ${{ secrets.DOCKERHUB_TOKEN }} 
-        USER_NAME: ${{ secrets.DOCKERHUB_USERNAME }} 
       with:
         registry: docker.io
         ecr: false
-        username: $(USER_NAME)
+        username: ${{ secrets.DOCKERHUB_USERNAME }} 
         #password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
-        password: $(PASS)
+        password: ${{ secrets.DOCKERHUB_TOKEN }} 
     
     - name: Set commit information (Optional usage)
       run: |
