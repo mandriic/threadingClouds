@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-09T14:42:27" hostname="fv-az1501-54" time="0.678">
+<testsuite name="com.example.demo.DemoApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-09T15:42:08" hostname="fv-az1245-107" time="0.598">
   <properties/>
-  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.678"/>
-  <system-out><![CDATA[14:42:26.500 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:42:26.585 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+  <testcase name="contextLoads()" classname="com.example.demo.DemoApplicationTests" time="0.598"/>
+  <system-out><![CDATA[15:42:06.723 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:42:06.809 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,10 +13,10 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::             (v3.3.0-M1)
 
-2024-02-09T14:42:26.918Z  INFO 1900 --- [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 with PID 1900 (started by runner in /home/runner/work/threadingClouds/threadingClouds)
-2024-02-09T14:42:26.920Z  INFO 1900 --- [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
-2024-02-09T14:42:27.634Z  INFO 1900 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-02-09T14:42:27.903Z  INFO 1900 --- [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.19 seconds (process running for 2.101)
+2024-02-09T15:42:07.153Z  INFO 1995 --- [    Test worker] com.example.demo.DemoApplicationTests    : Starting DemoApplicationTests using Java 17.0.10 with PID 1995 (started by runner in /home/runner/work/threadingClouds/threadingClouds)
+2024-02-09T15:42:07.155Z  INFO 1995 --- [    Test worker] com.example.demo.DemoApplicationTests    : No active profile set, falling back to 1 default profile: "default"
+2024-02-09T15:42:07.890Z  INFO 1995 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-02-09T15:42:08.106Z  INFO 1995 --- [    Test worker] com.example.demo.DemoApplicationTests    : Started DemoApplicationTests in 1.179 seconds (process running for 2.051)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
