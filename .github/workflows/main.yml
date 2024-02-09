@@ -41,13 +41,11 @@ jobs:
       uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
-    - name: Get secret
-
     - name: Login to Docker Hub
       uses: docker/login-action@v3
       env:
-        USER: ${{ secrets.DOCKER_USERNAME }}
-        TOKEN: ${{ secrets.DOCKER_TOKEN }}
+        USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       with:
         registry: docker.io
         ecr: false
