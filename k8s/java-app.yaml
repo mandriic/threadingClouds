@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: java-app
-        image: mandriic/java-app:f15e5ae61ad9dd8729aaf74a86e4f2497ff38001
+        image: mandriic/java-app:790b06fd9f488b8a0701c97624e50cba9006c36a
         ports:
         - containerPort: 8080
