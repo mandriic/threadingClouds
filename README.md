@@ -76,4 +76,4 @@ In path you need to paste directory in your repo, where you will save .yaml file
 If all is good, you will see next:
 ![ deploy ](images/deploying.jpg)
 
-For forward ports I use `while true; do kubectl port-forward deployments/java-app-deployment -n default 8082:8080; done`, It works but not perfect, I tryed make it based in kubernetes force, but now it dont work.
+For forward ports I use `while true; do kubectl port-forward deployments/java-app-deployment -n default 8082:8080; done`, It works but not perfect, I tryed make it based in kubernetes force, but now it dont work.  
