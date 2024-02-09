@@ -37,21 +37,15 @@ jobs:
       with:
         name: build-output
         path: build/libs/
-    - name: Setup QEMU
-      uses: docker/setup-qemu-action@v3
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v3
+
     - name: Login to Docker Hub
       uses: docker/login-action@v3
-      env:
-        USER: ${{ secrets.DOCKERHUB_USERNAME }}
-        TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       with:
         registry: docker.io
         ecr: false
-        username: "$(USER)"
+        username: "${{ secrets.DOCKER_USERNAME }}"
         #password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
-        password: "$(TOKEN)"
+        password: "${{ secrets.DOCKER_PASSWORD }}"
     
     - name: Set commit information (Optional usage)
       run: |
