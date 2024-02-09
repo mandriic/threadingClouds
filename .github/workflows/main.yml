@@ -41,11 +41,12 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v4
       with:
+        PASS: ${{ secrets.DOCKERHUB_TOKEN }} 
         registry: docker.io
         ecr: false
         username: mandriic
         #password:  dckr_pat_Qxkv_-x2FWykZYsTbyqfCp2WxUw
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        password: $(PASS)
     
     - name: Set commit information (Optional usage)
       run: |
